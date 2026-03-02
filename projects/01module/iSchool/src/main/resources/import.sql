@@ -22,3 +22,8 @@ INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', '2022-11-20T03:00:00Z', 1);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2021-09-01T03:00:00Z', '2022-09-01T03:00:00Z', 2);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2022-03-01T03:00:00Z', '2023-03-01T03:00:00Z', 3);
+
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confirm your subscription', TIMESTAMP WITH TIME ZONE '2025-11-20T03:00:00Z', false, 'https://www.ischool.com/subscription', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confirm your subscription', TIMESTAMP WITH TIME ZONE '2025-12-20T03:00:00Z', false, 'https://www.ischool.com/subscription', 2);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confirm your subscription', TIMESTAMP WITH TIME ZONE '2025-11-20T03:00:00Z', false, 'https://www.ischool.com/subscription', 3);
+
