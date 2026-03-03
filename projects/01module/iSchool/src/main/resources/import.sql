@@ -42,15 +42,75 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 
 -- Alex enrolled in Bootcamp HTML (Offer 1) - Active enrollment, no refund
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2025-11-20T03:00:00Z', NULL, true, false);
-
 -- Bob enrolled in Bootcamp Java (Offer 3) - Active enrollment, no refund
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 3, TIMESTAMP WITH TIME ZONE '2025-11-21T03:00:00Z', NULL, true, false);
-
 -- Maria enrolled in Bootcamp SQL (Offer 4) - Active enrollment, no refund
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (3, 4, TIMESTAMP WITH TIME ZONE '2025-11-22T03:00:00Z', NULL, true, false);
-
 -- Bob also enrolled in Bootcamp HTML (Offer 2 - Edition 2.0) - Active enrollment
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 2, TIMESTAMP WITH TIME ZONE '2025-11-23T03:00:00Z', NULL, true, false);
-
 -- Example of a refunded enrollment
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 2, TIMESTAMP WITH TIME ZONE '2025-11-24T03:00:00Z', TIMESTAMP WITH TIME ZONE '2025-11-25T03:00:00Z', false, false);
+
+-- HTML CONTENT LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('HTML5 Fundamentals - Introduction', 1, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (1, 'Complete guide to HTML5 structure, elements, and best practices', 'https://www.devsuperior.com/html_intro_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Semantic HTML Deep Dive', 2, 2);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (2, 'Understanding semantic tags: header, nav, main, article, section, footer', 'https://www.devsuperior.com/html_semantic_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('HTML Forms and Validation', 3, 3);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (3, 'Creating interactive forms with input types, validation, and accessibility', 'https://www.devsuperior.com/html_forms_video');
+
+-- HTML TASK LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('HTML Practice - Build a Personal Page', 4, 1);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'Create a personal portfolio page using HTML5 semantic elements', 3, 2, 2.0, TIMESTAMP WITH TIME ZONE '2026-04-10T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('HTML Challenge - Responsive Navigation', 5, 2);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (5, 'Build a responsive navigation menu with dropdowns using semantic HTML', 4, 3, 2.5, TIMESTAMP WITH TIME ZONE '2026-04-17T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('HTML Project - Complete Registration Form', 6, 3);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (6, 'Create a complete user registration form with all HTML5 input types and validation', 5, 4, 3.0, TIMESTAMP WITH TIME ZONE '2026-04-24T23:59:59Z');
+
+-- SQL CONTENT LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('SQL Database Design Fundamentals', 1, 4);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (7, 'Introduction to relational databases, tables, and basic SQL commands', 'https://www.devsuperior.com/sql_fundamentals_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Creating Tables and Relationships', 2, 5);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (8, 'Learn about primary keys, foreign keys, and different types of relationships', 'https://www.devsuperior.com/sql_tables_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Data Normalization Deep Dive', 3, 6);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (9, 'Complete guide to 1NF, 2NF, 3NF with practical examples', 'https://www.devsuperior.com/sql_normalization_video');
+
+-- SQL TASK LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('SQL Practice - Database Creation', 4, 4);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (10, 'Create a database for a library system with books, authors, and members', 4, 3, 2.5, TIMESTAMP WITH TIME ZONE '2026-05-01T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('SQL Challenge - Complex Relationships', 5, 5);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (11, 'Design tables for an e-commerce platform with products, orders, customers, and payments', 5, 4, 3.0, TIMESTAMP WITH TIME ZONE '2026-05-08T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('SQL Project - Database Normalization', 6, 6);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (12, 'Take a denormalized spreadsheet and normalize it to 3NF with proper relationships', 6, 4, 3.5, TIMESTAMP WITH TIME ZONE '2026-05-15T23:59:59Z');
+
+-- JAVA CONTENT LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java OOP - Classes and Objects', 1, 7);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (13, 'Understanding classes, objects, constructors, and methods in Java', 'https://www.devsuperior.com/java_classes_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java OOP - Inheritance and Polymorphism', 2, 8);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (14, 'Deep dive into inheritance hierarchies, method overriding, and polymorphic behavior', 'https://www.devsuperior.com/java_inheritance_video');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java OOP - Encapsulation and Abstraction', 3, 9);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (15, 'Learn about data hiding, getters/setters, abstract classes, and interfaces', 'https://www.devsuperior.com/java_encapsulation_video');
+
+-- JAVA TASK LESSONS
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java Practice - Class Design', 4, 7);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (16, 'Design and implement classes for a university system with students, professors, and courses', 4, 3, 2.5, TIMESTAMP WITH TIME ZONE '2026-05-20T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java Challenge - Inheritance Hierarchy', 5, 8);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (17, 'Create an inheritance hierarchy for different types of employees and implement polymorphic behavior', 5, 4, 3.0, TIMESTAMP WITH TIME ZONE '2026-05-27T23:59:59Z');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java Project - Complete OOP Application', 6, 9);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (18, 'Build a complete banking application using all OOP concepts: classes, inheritance, polymorphism, encapsulation, and interfaces', 8, 5, 4.0, TIMESTAMP WITH TIME ZONE '2026-06-05T23:59:59Z');
+
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (3, 1, 1);

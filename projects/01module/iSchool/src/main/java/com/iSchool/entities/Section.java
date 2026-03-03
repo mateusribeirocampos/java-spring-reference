@@ -2,6 +2,8 @@ package com.iSchool.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -26,6 +28,9 @@ public class Section {
     @ManyToOne
     @JoinColumn(name = "prerequisite_id")
     private Section prerequisite;
+
+    @OneToMany(mappedBy = "section")
+    private List<Lesson> lessons = new ArrayList<>();
 
     public Section() {
     }
@@ -94,6 +99,14 @@ public class Section {
 
     public void setPrerequisite(Section prerequisite) {
         this.prerequisite = prerequisite;
+    }
+
+    public List<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(List<Lesson> lessons) {
+        this.lessons = lessons;
     }
 
     @Override
