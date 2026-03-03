@@ -39,3 +39,18 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Introduction to Classes and Objects', 'Understanding the fundamentals of object-oriented programming', 2, 'https://www.ischool.com/sections/java_oo_intro.jpg', 1, null);
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Inheritance and Polymorphism', 'Understanding inheritance hierarchies and polymorphic behavior', 3, 'https://www.ischool.com/sections/java_inheritance.jpg', 1, 1);
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Encapsulation and Abstraction', 'Data hiding and abstract classes vs interfaces', 4, 'https://www.ischool.com/sections/java_encapsulation.jpg', 1, 2);
+
+-- Alex enrolled in Bootcamp HTML (Offer 1) - Active enrollment, no refund
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2025-11-20T03:00:00Z', NULL, true, false);
+
+-- Bob enrolled in Bootcamp Java (Offer 3) - Active enrollment, no refund
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 3, TIMESTAMP WITH TIME ZONE '2025-11-21T03:00:00Z', NULL, true, false);
+
+-- Maria enrolled in Bootcamp SQL (Offer 4) - Active enrollment, no refund
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (3, 4, TIMESTAMP WITH TIME ZONE '2025-11-22T03:00:00Z', NULL, true, false);
+
+-- Bob also enrolled in Bootcamp HTML (Offer 2 - Edition 2.0) - Active enrollment
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 2, TIMESTAMP WITH TIME ZONE '2025-11-23T03:00:00Z', NULL, true, false);
+
+-- Example of a refunded enrollment
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 2, TIMESTAMP WITH TIME ZONE '2025-11-24T03:00:00Z', TIMESTAMP WITH TIME ZONE '2025-11-25T03:00:00Z', false, false);
