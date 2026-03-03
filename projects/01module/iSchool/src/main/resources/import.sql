@@ -2,7 +2,6 @@ INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Alex', 'Br
 INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Bob', 'Brown', 'bob@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
 INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Maria', 'Green', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
 
-
 INSERT INTO tb_role (authority) VALUES ('ROLE_STUDENT');
 INSERT INTO tb_role (authority) VALUES ('ROLE_INSTRUCTOR');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
@@ -27,3 +26,16 @@ INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confir
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confirm your subscription', TIMESTAMP WITH TIME ZONE '2025-12-20T03:00:00Z', false, 'https://www.ischool.com/subscription', 2);
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Confirm your subscription', TIMESTAMP WITH TIME ZONE '2025-11-20T03:00:00Z', false, 'https://www.ischool.com/subscription', 3);
 
+INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('Programação Orientada a objeto - java', 'Classes, herança e polimorfismo', 1, 'https://www.ischool.com/curso_java', 1, 'https://www.baeldung.com/oop_java', 2);
+INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('HTML5 Fundamentals', 'Semantic HTML, forms, and multimedia elements', 1, 'https://www.ischool.com/curso_html', 1, 'https://www.w3schools.com/html/', 1);
+INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('SQL Database Design', 'Tables, relationships, and normalization', 1, 'https://www.ischool.com/curso_sql', 1, 'https://www.postgresqltutorial.com/', 4);
+
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Introduction to HTML', 'Learn the basics of HTML structure and document setup', 1, 'https://www.ischool.com/sections/html_intro.jpg', 2, NULL);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Semantic HTML Elements', 'Understanding header, nav, main, article, section, and footer tags', 2, 'https://www.ischool.com/sections/html_semantic.jpg', 2, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Forms and Input Validation', 'Creating user-friendly forms with HTML5 validation', 3, 'https://www.ischool.com/sections/html_forms.jpg', 2, 2);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Database Fundamentals', 'Understanding what databases are and why we use them', 1, 'https://www.ischool.com/sections/sql_fundamentals.jpg', 3, NULL);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Creating Tables and Relationships', 'Learn about primary keys, foreign keys, and table relationships', 2, 'https://www.ischool.com/sections/sql_tables.jpg', 3, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Data Normalization Techniques', 'First, second, and third normal forms explained with examples', 3, 'https://www.ischool.com/sections/sql_normalization.jpg', 3, 2);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Introduction to Classes and Objects', 'Understanding the fundamentals of object-oriented programming', 2, 'https://www.ischool.com/sections/java_oo_intro.jpg', 1, null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Inheritance and Polymorphism', 'Understanding inheritance hierarchies and polymorphic behavior', 3, 'https://www.ischool.com/sections/java_inheritance.jpg', 1, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Encapsulation and Abstraction', 'Data hiding and abstract classes vs interfaces', 4, 'https://www.ischool.com/sections/java_encapsulation.jpg', 1, 2);

@@ -19,7 +19,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User users;
+    private User user;
 
     public Notification() {
     }
@@ -72,12 +72,12 @@ public class Notification {
         this.route = route;
     }
 
-    public User getUsers() {
-        return users;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsers(User users) {
-        this.users = users;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
