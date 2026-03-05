@@ -46,6 +46,15 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "offer_id"))
     private List<Offer> offers = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "tb_user_reply",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "reply_id"))
+    private List<Reply> userWhoReplied = new ArrayList<>();
+
+    @OneToMany(mappedBy = "author")
+    private List<Reply> userReplyOwner = new ArrayList<>();
+
     public User() {
     }
 
@@ -149,6 +158,22 @@ public class User {
 
     public void setOffers(List<Offer> offers) {
         this.offers = offers;
+    }
+
+    public List<Reply> getUserWhoReplied() {
+        return userWhoReplied;
+    }
+
+    public void setUserWhoReplied(List<Reply> userWhoReplied) {
+        this.userWhoReplied = userWhoReplied;
+    }
+
+    public List<Reply> getUserReplyOwner() {
+        return userReplyOwner;
+    }
+
+    public void setUserReplyOwner(List<Reply> userReplyOwner) {
+        this.userReplyOwner = userReplyOwner;
     }
 
     @Override

@@ -111,12 +111,13 @@ INSERT INTO tb_task (id, description, question_count, approval_count, weight, du
 INSERT INTO tb_lesson (title, position, section_id) VALUES ('Java Project - Complete OOP Application', 6, 9);
 INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (18, 'Build a complete banking application using all OOP concepts: classes, inheritance, polymorphism, encapsulation, and interfaces', 8, 5, 4.0, TIMESTAMP WITH TIME ZONE '2026-06-05T23:59:59Z');
 
-INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (1, 1, 1);
-INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (2, 1, 1);
-INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (3, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (3, 1, 1);
 
-INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_HTML', TIMESTAMP WITH TIME ZONE '2026-06-05T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 4, 1, 1);
-INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_Java', TIMESTAMP WITH TIME ZONE '2026-06-06T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 16, 2, 2);
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_HTML', TIMESTAMP WITH TIME ZONE '2026-06-05T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 4, 1, 1);
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_Java', TIMESTAMP WITH TIME ZONE '2026-06-06T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 16, 2, 2);
 
---LESSON_ID  	MOMENT  	OFFER_ID  	USER_ID  	BODY  	TITLE
-INSERT INTO tb_topic(title, body, moment, user_id, offer_id, lesson_id) VALUES ('Encapsulation and Abstraction', 'Why encapsulation and abstraction can work together?', TIMESTAMP WITH TIME ZONE '2026-05-03T16:24:50Z', 1, null, 12);
+INSERT INTO tb_topic (title, body, moment, user_id, offer_id, lesson_id, answer_id) VALUES ('Encapsulation and Abstraction', 'Why encapsulation and abstraction can work together?', TIMESTAMP WITH TIME ZONE '2026-05-03T16:24:50Z', 1, null, 12, 1);
+
+INSERT INTO tb_reply(body, moment, topic_id, user_id) VALUES ('Abstraction and encapsulation work together to create robust, maintainable, and secure object-oriented systems by addressing different but complementary aspects of software design', TIMESTAMP WITH TIME ZONE '2026-05-03T16:24:50Z', 1, 2);
