@@ -114,3 +114,6 @@ INSERT INTO tb_task (id, description, question_count, approval_count, weight, du
 INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (1, 1, 1);
 INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (2, 1, 1);
 INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (3, 1, 1);
+
+INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_HTML', TIMESTAMP WITH TIME ZONE '2026-06-05T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 4, 1, 1);
+INSERT INTO tb_deliver(uri, moment, status, feedback, correct_count, lesson_id, user_id, offer_id) VALUES ('https://www.ischool.com/curso_Java', TIMESTAMP WITH TIME ZONE '2026-06-06T23:59:59Z', 1, 'The lesson will be corrected in two days', 1, 16, 2, 2);

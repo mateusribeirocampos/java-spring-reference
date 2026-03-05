@@ -1,6 +1,6 @@
 package com.iSchool.enums;
 
-public enum ResourceType {
+public enum ResourceType implements CodeEnum {
 
     LESSON_ONLY(1),
     LESSON_TASK(2),
@@ -14,7 +14,6 @@ public enum ResourceType {
     }
 
     public int getCode() {
-        System.out.println("Code from ResourceType interface");
         return code;
     }
 }
