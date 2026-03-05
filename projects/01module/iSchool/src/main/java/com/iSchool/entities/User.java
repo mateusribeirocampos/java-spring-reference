@@ -31,6 +31,21 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();
 
+    @OneToMany(mappedBy = "author")
+    private List<Topic> userTopicOwner = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name = "tb_user_topic",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "topic_id"))
+    private List<Topic> userWhoLiked = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name = "tb_user_offer",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "offer_id"))
+    private List<Offer> offers = new ArrayList<>();
+
     public User() {
     }
 
@@ -102,6 +117,38 @@ public class User {
             }
         }
         return false;
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    public List<Topic> getUserTopicOwner() {
+        return userTopicOwner;
+    }
+
+    public void setUserTopicOwner(List<Topic> userTopicOwner) {
+        this.userTopicOwner = userTopicOwner;
+    }
+
+    public List<Topic> getUserWhoLiked() {
+        return userWhoLiked;
+    }
+
+    public void setUserWhoLiked(List<Topic> userWhoLiked) {
+        this.userWhoLiked = userWhoLiked;
+    }
+
+    public List<Offer> getOffers() {
+        return offers;
+    }
+
+    public void setOffers(List<Offer> offers) {
+        this.offers = offers;
     }
 
     @Override
