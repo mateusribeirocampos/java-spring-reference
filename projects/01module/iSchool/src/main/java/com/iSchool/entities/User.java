@@ -34,11 +34,8 @@ public class User {
     @OneToMany(mappedBy = "author")
     private List<Topic> userTopicOwner = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(name = "tb_user_topic",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "topic_id"))
-    private List<Topic> userWhoLiked = new ArrayList<>();
+    @ManyToMany(mappedBy = "likes")
+    private List<Topic> likes = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "tb_user_offer",
@@ -54,6 +51,9 @@ public class User {
 
     @OneToMany(mappedBy = "author")
     private List<Reply> userReplyOwner = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "likes")
+    private List<Reply> replyLikes = new ArrayList<>();
 
     public User() {
     }
@@ -144,12 +144,12 @@ public class User {
         this.userTopicOwner = userTopicOwner;
     }
 
-    public List<Topic> getUserWhoLiked() {
-        return userWhoLiked;
+    public List<Topic> getLikes() {
+        return likes;
     }
 
-    public void setUserWhoLiked(List<Topic> userWhoLiked) {
-        this.userWhoLiked = userWhoLiked;
+    public void setLikes(List<Topic> likes) {
+        this.likes = likes;
     }
 
     public List<Offer> getOffers() {
@@ -174,6 +174,14 @@ public class User {
 
     public void setUserReplyOwner(List<Reply> userReplyOwner) {
         this.userReplyOwner = userReplyOwner;
+    }
+
+    public List<Reply> getReplyLikes() {
+        return replyLikes;
+    }
+
+    public void setReplyLikes(List<Reply> replyLikes) {
+        this.replyLikes = replyLikes;
     }
 
     @Override

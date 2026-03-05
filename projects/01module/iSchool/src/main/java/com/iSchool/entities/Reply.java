@@ -27,10 +27,13 @@ public class Reply {
     private Topic topic;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "author_id")
     private User author;
 
-    @ManyToMany(mappedBy = "userWhoReplied")
+    @ManyToMany
+    @JoinTable(name = "tb_reply_likes",
+            joinColumns = @JoinColumn(name = "reply_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> likes = new ArrayList<>();
 
     public Reply() {

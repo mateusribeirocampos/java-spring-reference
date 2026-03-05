@@ -26,7 +26,10 @@ public class Topic {
     @JoinColumn(name = "user_id")
     private User author;
 
-    @ManyToMany(mappedBy = "userWhoLiked")
+    @ManyToMany
+    @JoinTable(name = "tb_topic_likes",
+            joinColumns = @JoinColumn(name = "topic_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> likes = new ArrayList<>();
 
     @ManyToOne
@@ -42,7 +45,7 @@ public class Topic {
 
     @ManyToOne
     @JoinColumn(name = "answer_id")
-    private Topic answer;
+    private Reply answer;
 
     public Topic() {
     }
@@ -126,11 +129,11 @@ public class Topic {
         this.replies = replies;
     }
 
-    public Topic getAnswer() {
+    public Reply getAnswer() {
         return answer;
     }
 
-    public void setAnswer(Topic answer) {
+    public void setAnswer(Reply answer) {
         this.answer = answer;
     }
 
